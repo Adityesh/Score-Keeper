@@ -40,7 +40,10 @@ p2button.addEventListener("click",function(){
 
 });
 
-resetbutton.addEventListener("click",function(){
+resetbutton.addEventListener("click",reset());
+
+
+function reset(){
 
 	gameOver = false;
 	p1Score = 0;
@@ -51,13 +54,13 @@ resetbutton.addEventListener("click",function(){
 	p2Span.style.color = "black";
 
 
-});
-
+}
 
 customScore.addEventListener("change", function(){
 
 	scoreLimit.textContent = customScore.value;
 	winningScore = customScore.value;
+	reset();
 
 
 
