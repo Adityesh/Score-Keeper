@@ -3,6 +3,8 @@ var p2button = document.getElementById("p2");
 var resetbutton = document.querySelector("#rs");
 var p1Span = document.querySelector("#p1span");
 var p2Span = document.querySelector("#p2span");
+var scoreLimit = document.querySelector("#scoreLimit");
+var customScore = document.querySelector("input");
 
 var p1Score = 0;
 var p2Score = 0;
@@ -15,7 +17,7 @@ p1button.addEventListener("click",function(){
 	if(!gameOver){
 		p1Score++;
 		p1Span.textContent = p1Score;
-		if(p1Score === winningScore){
+		if(p1Score == winningScore){
 			p1Span.style.color = "green";
 			gameOver = true;
 		}
@@ -30,7 +32,7 @@ p2button.addEventListener("click",function(){
 	if(!gameOver){
 		p2Score++;
 		p2Span.textContent = p2Score;
-		if(p2Score === winningScore){
+		if(p2Score == winningScore){
 			p2Span.style.color = "green";
 			gameOver = true;
 		}
@@ -47,6 +49,16 @@ resetbutton.addEventListener("click",function(){
 	p2Span.textContent = "0";
 	p1Span.style.color = "black";
 	p2Span.style.color = "black";
+
+
+});
+
+
+customScore.addEventListener("change", function(){
+
+	scoreLimit.textContent = customScore.value;
+	winningScore = customScore.value;
+
 
 
 });
